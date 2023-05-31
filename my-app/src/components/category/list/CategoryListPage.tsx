@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import {useEffect, useState} from "react";
 import http from "../../../http";
-import { ICategoryItem } from "./types";
+import {ICategoryItem} from "./types";
+import {APP_ENV} from "../../../env";
 
 const CategoryListPage = () => {
     const [list, setList] = useState<ICategoryItem[]>([]);
@@ -8,18 +9,26 @@ const CategoryListPage = () => {
     useEffect(() => {
         http.get("api/Categories/list")
             .then(resp => {
-                const data= resp.data;
+                const data = resp.data;
                 setList(data);
             });
     }, []);
 
+    function getParentCategoryName(parentId: any) {
+        const parentCategory = list.map(category => (
+            category.id==parentId?category.name:null
+        ));
+        return parentCategory;
+    }
+
+
     const mapList = list.map(category => (
         <tr key={category.id}>
             <td>
-                <img src={category.image} alt="фото" width={50} />
+                <img src={`${APP_ENV.BASE_URL}images/${category.image}`} alt="фото" width={50}/>
             </td>
             <td>{category.name}</td>
-            <td>{category.parentId}</td>
+            <td>{getParentCategoryName(category.parentId)}</td>
             <td>{category.description}</td>
         </tr>
     ));
