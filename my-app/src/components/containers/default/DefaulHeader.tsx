@@ -28,7 +28,11 @@ const DefaultHeader = () => {
         Додати
         </Link>
         </li>
-
+        <li className="nav-item">
+            <Link className="nav-link active" aria-current="page" to="/api/Auth/register">
+                Реєстрація
+            </Link>
+        </li>
         </ul>
         <form className="d-flex" role="search">
     <input
@@ -40,6 +44,7 @@ const DefaultHeader = () => {
     <button className="btn btn-outline-success" type="submit">
         Search
         </button>
+
         </form>
         </div>
         </div>

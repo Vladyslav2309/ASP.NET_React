@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 import DefaultLayout from './components/containers/default/DefaultLayout';
 import CategoryListPage from './components/category/list/CategoryListPage';
 import CategoryCreatePage from "./components/category/create/CategoryCreatePage";
+import RegistrationPage from "./components/category/auth/RegistrationPage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/" element={<DefaultLayout/>}>
             <Route index element={<CategoryListPage/>} />
               <Route path="categories/create" element={<CategoryCreatePage/>}/>
+              <Route path="api/Auth/register" element={<RegistrationPage/>}/>
           </Route>
         </Routes>
       </>
