@@ -1,31 +1,31 @@
 import { useFormik } from "formik";
-import {ChangeEvent, FormEvent, useEffect, useState} from "react";
-import * as yup  from "yup";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import * as yup from "yup";
 import classNames from "classnames";
 import axios from "axios";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import http from "../../../http";
-import {APP_ENV} from "../../../env";
-import {ICategoryItem} from "../list/types";
-import {IUserCreate} from "./types";
+import { APP_ENV } from "../../../env";
+import { ICategoryItem } from "../list/types";
+import { IUserCreate } from "./types";
 
-const  RegistrationPage = () => {
+const RegistrationPage = () => {
 
     const navigator = useNavigate();
 
 
-    const initValues : IUserCreate = {
+    const initValues: IUserCreate = {
 
         id: 0,
         firstName: "",
         lastName: "",
-        email:"",
+        email: "",
         password: "",
         confirmPassword: "",
         image: ""
     };
 
-    const createSchema=yup.object({
+    const createSchema = yup.object({
         firstName: yup.string().required("Вкажіть прізвище"),
         lastName: yup.string().required("Вкажіть ім'я"),
         email: yup.string().required("Вкажіть електронну пошту"),
@@ -35,7 +35,7 @@ const  RegistrationPage = () => {
     });
 
 
-    const onSubmitFormikData = (values:  IUserCreate) => {
+    const onSubmitFormikData = (values: IUserCreate) => {
         console.log("Formik send data", values);
         http.post("api/Auth/register", values, {
             headers: {
@@ -54,11 +54,11 @@ const  RegistrationPage = () => {
         onSubmit: onSubmitFormikData
     });
 
-    const {values, errors, touched, handleSubmit, handleChange} = formik;
+    const { values, errors, touched, handleSubmit, handleChange } = formik;
 
     const onImageChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         if (e.target.files != null) {
-            const file =  e.target.files[0];
+            const file = e.target.files[0];
             formik.setFieldValue(e.target.name, file);
         }
     };
@@ -70,26 +70,24 @@ const  RegistrationPage = () => {
             <form className="col-md-6 offset-md-3" onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="name" className="form-label">
-                       Прізвище
+                        Прізвище
                     </label>
                     <input
                         type="text"
-                        className={classNames("form-control", {"is-invalid": errors.firstName && touched.firstName})}
+                        className={classNames("form-control", { "is-invalid": errors.firstName && touched.firstName })}
                         id="firstName"
                         name="firstName"
                         value={values.firstName}
-                        onChange={handleChange}
                     />
                     {errors.firstName && touched.firstName && <div className="invalid-feedback">{errors.firstName}</div>}
                 </div>
-
                 <div className="mb-3">
                     <label htmlFor="name" className="form-label">
                         Ім'я
                     </label>
                     <input
                         type="text"
-                        className={classNames("form-control", {"is-invalid": errors.lastName && touched.lastName})}
+                        className={classNames("form-control", { "is-invalid": errors.lastName && touched.lastName })}
                         id="lastName"
                         name="lastName"
                         value={values.lastName}
@@ -104,7 +102,7 @@ const  RegistrationPage = () => {
                     </label>
                     <input
                         type="text"
-                        className={classNames("form-control", {"is-invalid": errors.email && touched.email})}
+                        className={classNames("form-control", { "is-invalid": errors.email && touched.email })}
                         id="email"
                         name="email"
                         value={values.email}
@@ -119,7 +117,7 @@ const  RegistrationPage = () => {
                     </label>
                     <input
                         type="text"
-                        className={classNames("form-control", {"is-invalid": errors.password && touched.password})}
+                        className={classNames("form-control", { "is-invalid": errors.password && touched.password })}
                         id="password"
                         name="password"
                         value={values.password}
@@ -134,7 +132,7 @@ const  RegistrationPage = () => {
                     </label>
                     <input
                         type="text"
-                        className={classNames("form-control", {"is-invalid": errors.confirmPassword && touched.confirmPassword})}
+                        className={classNames("form-control", { "is-invalid": errors.confirmPassword && touched.confirmPassword })}
                         id="confirmPassword"
                         name="confirmPassword"
                         value={values.confirmPassword}
@@ -149,7 +147,7 @@ const  RegistrationPage = () => {
                     </label>
                     <input
                         type="file"
-                        className={classNames("form-control", {"is-invalid": errors.image && touched.image})}
+                        className={classNames("form-control", { "is-invalid": errors.image && touched.image })}
                         id="image"
                         name="image"
                         onChange={onImageChangeHandler}

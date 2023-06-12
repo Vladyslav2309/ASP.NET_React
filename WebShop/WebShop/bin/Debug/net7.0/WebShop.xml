@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebShop</name>
+    </assembly>
+    <members>
+        <member name="T:WebShop.Migrations.AddtblCategories">
+            <inheritdoc />
+        </member>
+        <member name="M:WebShop.Migrations.AddtblCategories.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebShop.Migrations.AddtblCategories.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebShop.Migrations.AddtblCategories.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:WebShop.Migrations.tblCreateParent">
+            <inheritdoc />
+        </member>
+        <member name="M:WebShop.Migrations.tblCreateParent.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebShop.Migrations.tblCreateParent.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebShop.Migrations.tblCreateParent.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:WebShop.Migrations.AddIdentityTabels">
+            <inheritdoc />
+        </member>
+        <member name="M:WebShop.Migrations.AddIdentityTabels.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebShop.Migrations.AddIdentityTabels.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebShop.Migrations.AddIdentityTabels.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="P:WebShop.Models.Auth.LoginViewModel.Email">
+            <summary>
+            Електронна пошта
+            </summary>
+            <example>novakvova@gmail.com</example>
+        </member>
+        <member name="P:WebShop.Models.Auth.LoginViewModel.Password">
+            <summary>
+            Пароль
+            </summary>
+            <example>Qwerty1-</example>
+        </member>
+        <member name="P:RegisterViewModel.FirstName">
+            <summary>
+            Ім'я
+            </summary>
+            <example>Іван</example>
+        </member>
+        <member name="P:RegisterViewModel.LastName">
+            <summary>
+            Прізвище
+            </summary>
+            <example>Тапочкин</example>
+        </member>
+        <member name="P:RegisterViewModel.Email">
+            <summary>
+            Електронна пошта
+            </summary>
+            <example>novakvova@gmail.com</example>
+        </member>
+        <member name="P:RegisterViewModel.Password">
+            <summary>
+            Пароль
+            </summary>
+            <example>Qwerty1-</example>
+        </member>
+        <member name="P:RegisterViewModel.ConfirmPassword">
+            <summary>
+            Підтверження пароль
+            </summary>
+            <example>Qwerty1-</example>
+        </member>
+        <member name="P:RegisterViewModel.Image">
+            <summary>
+            Оберіть фото користувача
+            </summary>
+        </member>
+    </members>
+</doc>

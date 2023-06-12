@@ -121,3 +121,10 @@ C:\xampp\htdocs\pv122_ASP.net\WebShop\WebShop\bin\Debug\net7.0\Microsoft.Identit
 C:\xampp\htdocs\pv122_ASP.net\WebShop\WebShop\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\xampp\htdocs\pv122_ASP.net\WebShop\WebShop\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
 C:\xampp\htdocs\pv122_ASP.net\WebShop\WebShop\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
+C:\xampp\htdocs\pv122_ASP.net\WebShop\WebShop\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
+C:\xampp\htdocs\pv122_ASP.net\WebShop\WebShop\bin\Debug\net7.0\System.Drawing.Common.dll
+C:\xampp\htdocs\pv122_ASP.net\WebShop\WebShop\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\xampp\htdocs\pv122_ASP.net\WebShop\WebShop\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\xampp\htdocs\pv122_ASP.net\WebShop\WebShop\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\xampp\htdocs\pv122_ASP.net\WebShop\WebShop\bin\Debug\net7.0\WebShop.xml
+C:\xampp\htdocs\pv122_ASP.net\WebShop\WebShop\obj\Debug\net7.0\WebShop.xml

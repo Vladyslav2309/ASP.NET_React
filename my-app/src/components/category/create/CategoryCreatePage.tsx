@@ -96,6 +96,7 @@ const CategoryCreatePage = () => {
                     </label>
                     <input
                         type="file"
+                        title="Виберіть файл"
                         className={classNames("form-control", {"is-invalid": errors.image && touched.image})}
                         id="image"
                         name="image"
@@ -120,7 +121,7 @@ const CategoryCreatePage = () => {
 
                 <div className="mb-3">
                     <label htmlFor="priority" className="form-label">
-                       Пріоритет
+                       Приорітет
                     </label>
                     <input
                         type="number"

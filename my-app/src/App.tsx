@@ -14,7 +14,7 @@ function App() {
           <Route path="/" element={<DefaultLayout/>}>
             <Route index element={<CategoryListPage/>} />
               <Route path="categories/create" element={<CategoryCreatePage/>}/>
-              <Route path="api/Auth/register" element={<RegistrationPage/>}/>
+              {/*<Route path="api/Auth/register" element={<RegistrationPage/>}/>*/}
           </Route>
         </Routes>
       </>
