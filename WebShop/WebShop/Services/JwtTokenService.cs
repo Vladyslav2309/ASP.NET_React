@@ -39,5 +39,10 @@ namespace WebShop.Services
            );
             return new JwtSecurityTokenHandler().WriteToken(jwt);
         }
-    }
+        public void DeleteToken(UserEntity user)
+        {
+          
+            user.PasswordHash = null;
+        }
+        }
 }

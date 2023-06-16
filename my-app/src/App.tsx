@@ -5,7 +5,8 @@ import { Route, Routes } from 'react-router-dom';
 import DefaultLayout from './components/containers/default/DefaultLayout';
 import CategoryListPage from './components/category/list/CategoryListPage';
 import CategoryCreatePage from "./components/category/create/CategoryCreatePage";
-import RegistrationPage from "./components/category/auth/RegistrationPage";
+import RegistrationPage from "./components/auth/registration/RegistrationPage";
+import LoginPage from "./components/auth/login/LoginPage";
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
           <Route path="/" element={<DefaultLayout/>}>
             <Route index element={<CategoryListPage/>} />
               <Route path="categories/create" element={<CategoryCreatePage/>}/>
-              {/*<Route path="api/Auth/register" element={<RegistrationPage/>}/>*/}
+              {<Route path="api/Auth/register" element={<RegistrationPage/>}/>}
+              <Route path="api/Auth/login" element={<LoginPage/>}/>
           </Route>
         </Routes>
       </>

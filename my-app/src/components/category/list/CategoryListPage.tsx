@@ -2,8 +2,13 @@ import {useEffect, useState} from "react";
 import http from "../../../http";
 import {ICategoryItem} from "./types";
 import {APP_ENV} from "../../../env";
+import {useDispatch} from "react-redux";
+import {AuthUserActionType} from "../../auth/types";
 
 const CategoryListPage = () => {
+
+
+
     const [list, setList] = useState<ICategoryItem[]>([]);
 
     useEffect(() => {
@@ -32,10 +37,10 @@ const CategoryListPage = () => {
             <td>{category.description}</td>
         </tr>
     ));
-
     return (
         <>
             <h1 className="text-center">Список категорій</h1>
+
             <table className="table">
                 <thead>
                 <tr>

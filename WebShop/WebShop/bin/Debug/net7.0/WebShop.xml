@@ -44,13 +44,13 @@
             <summary>
             Електронна пошта
             </summary>
-            <example>novakvova@gmail.com</example>
+            <example>korolov2309@gmail.com</example>
         </member>
         <member name="P:WebShop.Models.Auth.LoginViewModel.Password">
             <summary>
             Пароль
             </summary>
-            <example>Qwerty1-</example>
+            <example>123456</example>
         </member>
         <member name="P:RegisterViewModel.FirstName">
             <summary>

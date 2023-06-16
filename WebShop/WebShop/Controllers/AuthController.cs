@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 using WebShop.Abstract;
 using WebShop.Constans;
 using WebShop.Data.Entities.Identity;
@@ -73,6 +75,30 @@ namespace WebShop.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        [HttpPost("logout")]
+        [Authorize]
+        public async Task<IActionResult> Logout( LoginViewModel model)
+        {
+            try
+            {
+               
+                var user = await _userManager.FindByEmailAsync(model.Email);
+                if (user == null)
+                    return BadRequest("Щось пішло не так");
+               _jwtTokenService.DeleteToken(user);
+
+                await _userManager.UpdateAsync(user);
+
+         
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
 
     }
 
