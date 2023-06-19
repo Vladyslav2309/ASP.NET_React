@@ -23,6 +23,6 @@ namespace WebShop.Data.Entities
         public virtual CategoryEntity Parent { get; set; }
 
         public virtual ICollection<CategoryEntity> Children { get; set; }
-        
+        public virtual ICollection<ProductEntity> Products { get; set; } 
     }
 }

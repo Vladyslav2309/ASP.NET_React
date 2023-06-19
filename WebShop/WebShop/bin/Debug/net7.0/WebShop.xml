@@ -40,6 +40,30 @@
         <member name="M:WebShop.Migrations.AddIdentityTabels.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:WebShop.Migrations.AddtblProducts">
+            <inheritdoc />
+        </member>
+        <member name="M:WebShop.Migrations.AddtblProducts.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebShop.Migrations.AddtblProducts.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebShop.Migrations.AddtblProducts.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:WebShop.Migrations.AddtblProductsImages">
+            <inheritdoc />
+        </member>
+        <member name="M:WebShop.Migrations.AddtblProductsImages.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebShop.Migrations.AddtblProductsImages.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebShop.Migrations.AddtblProductsImages.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
         <member name="P:WebShop.Models.Auth.LoginViewModel.Email">
             <summary>
             Електронна пошта
