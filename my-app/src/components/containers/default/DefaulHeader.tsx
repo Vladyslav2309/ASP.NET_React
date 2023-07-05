@@ -17,7 +17,7 @@ const DefaultHeader = () => {
     };
 
     let {isAuth, user} = useSelector((store: any) => store.auth as IAuthUser);
-
+        const isAdmin= user?.roles==="Admin";
     return (
         <>
             <header data-bs-theme="dark">
@@ -39,11 +39,11 @@ const DefaultHeader = () => {
                         </button>
                         <div className="collapse navbar-collapse" id="navbarCollapse">
                             <ul className="navbar-nav me-auto mb-2 mb-md-0">
-                                <li className="nav-item">
-                                    <Link className="nav-link active" aria-current="page" to="/categories/create">
-                                        Додати категорію
+                                {isAdmin&& <li className="nav-item">
+                                    <Link className="nav-link active" aria-current="page" to="/admin">
+                                        Адмін панель
                                     </Link>
-                                </li>
+                                </li>}
                             </ul>
                             <ul className="navbar-nav mb-2 mb-md-0">
                                 {isAuth ?
@@ -63,7 +63,7 @@ const DefaultHeader = () => {
                                     :
                                     (<>
                                         <li className="nav-item">
-                                            <Link className="nav-link active" aria-current="page" to="/api/Auth/login">
+                                            <Link className="nav-link active" aria-current="page" to="/login">
                                                 Вхід
                                             </Link>
                                         </li>

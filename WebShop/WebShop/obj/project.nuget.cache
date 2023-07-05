@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "GIzkEUdYxrqtgUHUkzqI6pf6LcxTQg0C1QEWFAASttp4tXqQKLRahPkhUhiQB4m1O3NSzM6Q9F5KAHJWsi4RqA==",
+  "dgSpecHash": "qsR9054bILy/33MdGpqrwrbhq198DvNJdFIWqNRly+B5PiakHSb/HheGx/EYBO9W1EM9UDwNbgkoPaxyLs4/PQ==",
   "success": true,
   "projectFilePath": "C:\\xampp\\htdocs\\pv122_ASP.net\\WebShop\\WebShop\\WebShop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Vlad\\.nuget\\packages\\advancedstringbuilder\\0.1.0\\advancedstringbuilder.0.1.0.nupkg.sha512",
+    "C:\\Users\\Vlad\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Vlad\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\Vlad\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Vlad\\.nuget\\packages\\javascriptengineswitcher.chakracore\\3.21.0\\javascriptengineswitcher.chakracore.3.21.0.nupkg.sha512",
     "C:\\Users\\Vlad\\.nuget\\packages\\javascriptengineswitcher.chakracore.native.win-x64\\3.21.0\\javascriptengineswitcher.chakracore.native.win-x64.3.21.0.nupkg.sha512",
@@ -16,7 +18,7 @@
     "C:\\Users\\Vlad\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\7.0.5\\microsoft.aspnetcore.cryptography.keyderivation.7.0.5.nupkg.sha512",
     "C:\\Users\\Vlad\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\7.0.5\\microsoft.aspnetcore.identity.entityframeworkcore.7.0.5.nupkg.sha512",
     "C:\\Users\\Vlad\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.5\\microsoft.aspnetcore.openapi.7.0.5.nupkg.sha512",
-    "C:\\Users\\Vlad\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\Vlad\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Vlad\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.5\\microsoft.entityframeworkcore.7.0.5.nupkg.sha512",
     "C:\\Users\\Vlad\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.5\\microsoft.entityframeworkcore.abstractions.7.0.5.nupkg.sha512",
     "C:\\Users\\Vlad\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.5\\microsoft.entityframeworkcore.analyzers.7.0.5.nupkg.sha512",

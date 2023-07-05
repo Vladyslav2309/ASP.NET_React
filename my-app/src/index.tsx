@@ -11,6 +11,7 @@ import { Provider } from "react-redux";
 import jwtDecode from "jwt-decode";
 import {AuthUserActionType, IUser} from "./components/auth/types";
 import http from "./http";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -23,7 +24,8 @@ const root = ReactDOM.createRoot(
         const user = jwtDecode(localStorage.token) as IUser;
         store.dispatch({type: AuthUserActionType.LOGIN_USER, payload:{
             email: user.email,
-                name: user.name
+                name: user.name,
+                roles: user.roles
             } as IUser});
     }
 root.render(

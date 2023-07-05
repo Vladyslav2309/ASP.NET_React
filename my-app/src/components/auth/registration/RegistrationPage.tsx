@@ -6,7 +6,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import http from "../../../http";
 import { APP_ENV } from "../../../env";
-import { ICategoryItem } from "../../category/list/types";
+import { ICategoryItem } from "../../admin/category/list/types";
 import { IUserCreate } from "./types";
 
 const RegistrationPage = () => {

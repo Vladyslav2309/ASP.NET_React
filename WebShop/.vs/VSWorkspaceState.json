@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\WebShop"
+    "\\WebShop",
+    "\\WebShop\\Controllers"
   ],
+  "SelectedNode": "\\WebShop\\Controllers\\CategoriesController.cs",
   "PreviewInSolutionExplorer": false
 }

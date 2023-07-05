@@ -39,7 +39,8 @@ const LoginPage = () => {
             http.defaults.headers.common['Authorization'] = `Bearer ${localStorage.token}`;
             dispatch({type: AuthUserActionType.LOGIN_USER, payload:{
                 email: user.email,
-                    name: user.name
+                    name: user.name,
+                    roles: user.roles
                 } as IUser
             });
             navigator("/");

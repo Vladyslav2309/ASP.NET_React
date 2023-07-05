@@ -6,9 +6,11 @@ export enum AuthUserActionType{
 export interface IAuthUser{
     isAuth:boolean;
     user?: IUser;
+
 }
 
 export interface  IUser{
     email: string;
     name:string;
+    roles:string
 }
