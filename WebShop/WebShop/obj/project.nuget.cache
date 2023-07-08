@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qsR9054bILy/33MdGpqrwrbhq198DvNJdFIWqNRly+B5PiakHSb/HheGx/EYBO9W1EM9UDwNbgkoPaxyLs4/PQ==",
+  "dgSpecHash": "0Y91mDoOe8JFRM14xvbSoaB8EQWHJx+isd61+++5UeYdWxqh6C6adlhdFi57EcfHnV0yOg856KzoomP/jEn6bQ==",
   "success": true,
-  "projectFilePath": "C:\\xampp\\htdocs\\pv122_ASP.net\\WebShop\\WebShop\\WebShop.csproj",
+  "projectFilePath": "D:\\xampp\\htdocs\\pv122_ASP.net\\WebShop\\WebShop\\WebShop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Vlad\\.nuget\\packages\\advancedstringbuilder\\0.1.0\\advancedstringbuilder.0.1.0.nupkg.sha512",
     "C:\\Users\\Vlad\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",

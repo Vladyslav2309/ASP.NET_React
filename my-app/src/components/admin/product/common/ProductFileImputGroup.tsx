@@ -1,80 +1,119 @@
-import add from "../../../assets/add.jpg";
+import add from "../../../../assets/add.png";
 import {ChangeEvent, FC, useState} from "react";
 import {IUploadImage, IUploadImageResult} from "./types";
 import http from "../../../../http";
 import {APP_ENV} from "../../../../env";
 
-interface IProps {
-    field: string;
+interface ICategoryParentSelectProps {
+    images: IUploadImageResult[];
+    setImages: (images: IUploadImageResult[]) => void;
 }
 
-const ProductFileInputGroup: FC<IProps> = ({
-                                               field
-                                           }) => {
-    const [images, setImages] = useState<IUploadImageResult[]>([]);
+const ProductFileInputGroup: FC<ICategoryParentSelectProps> = ({ images, setImages }) => {
 
-    const onChangeFileHandler = async (e: ChangeEvent<HTMLInputElement>) => {
+    // const [images, setImages] = useState<IUploadImageResult[]>([]);
+
+    const onChangeFileHandler = (e: ChangeEvent<HTMLInputElement>) => {
+        console.log("on change " + e.target.files);
         const files = e.target.files;
         if (files) {
             const file = files[0];
-            const allowedTypes = ["image/jpeg", "image/jpg", "image/png"];
-            if (!allowedTypes.includes(file.type)) {
-                alert("Не допустимий тип файлу!");
+            const allowTypes = ["image/jpeg", "image/png", "image/jpg"];
+            if (!allowTypes.includes(file.type)) {
+                alert("Не вірний формат файлу");
                 return;
             }
             const upload: IUploadImage = {
                 image: file
             }
-            try {
-                const result = await http.post<IUploadImageResult>("api/products/upload-image", upload, {
-                    headers: {
-                        "Content-Type": "multipart/form-data",
-                    },
-                });
-                setImages([...images, result.data]);
-                //console.log("Upload image is good");
-            }
-            catch (error) {
-                console.log("log info", error);
-            }
+            http.post('api/products/UploadImage', upload, {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                },
+            })
+                .then(resp => {
+                    console.log(upload, resp);
+                    setImages([...images, resp.data]);
+                })
+                .catch(bad => {
+                    console.log("Bad request", bad);
+                })
+
+        }
+
+    }
+    const onDeleteFileHandler = async (id: number) => {
+        try {
+            await http.delete(`api/products/RemoveImage/${id}`);
+            setImages(images?.filter(x => x.id !== id));
+        } catch {
+            console.log("Delete bad request");
         }
     }
+
     return (
+
         <>
-            <div className="mb-3">
-                <div className="row">
-                    <div className=" col-sm-4 col-md-3 col-lg-2">
-                        <label htmlFor={field}>
-                            <h6>Оберіть фото</h6>
-                            <img src={add} alt="Фото"
-                                 className={"img-fluid"}
-                                 style={{cursor: "pointer"}}
+            <h6>Оберіть фото</h6>
+
+            <div className="row m-0" >
+                <br></br>
+                <div className="col position-relative">
+                    <div className="imgUp">
+                        <div className="imagePreview align-items-center">
+                            <img
+                                src={add}
+                                className="img-fluid"
+                                alt="Зображення"
+                                style={{ height: '100%', maxHeight: "120px", overflow: 'hidden' }}
+                            />
+                        </div>
+
+                        <label className="btn btn-primary">
+                            Upload
+                            <input
+                                type="file"
+                                className="uploadFile img"
+                                //value="Upload Photo"
+                                onChange={onChangeFileHandler}
+                                style={{ width: '0px', height: '0px', overflow: 'hidden' }}
                             />
                         </label>
-                        <input type="file"
-                               className={"d-none"}
-                               accept={"image/jpeg, image/jpg, image/png"}
-                               id={field}
-                               onChange={onChangeFileHandler}
-                        />
+
+
                     </div>
-                    {
-                        images.map(x=>{
-                            return (
-                                <div className=" col-sm-4 col-md-3 col-lg-2">
-
-                                    <img src={`${APP_ENV.BASE_URL}images/300_${x.name}`} alt="Фото"
-                                         className={"img-fluid"}
-                                    />
-
-                                </div>
-                            );
-                        })
-                    }
                 </div>
-            </div>
-        </>
+                {images.map((img) => (
+                    <>
+                        <br></br>
+                        <div className="col position-relative">
+                            <div className="imgUp">
+                                <div className="imagePreview align-items-center">
+                                    <img
+                                        src={`${APP_ENV.BASE_URL}images/300_` + img.name}
+                                        className="img-fluid"
+                                        alt="Зображення"
+                                        style={{ height: '100%', maxHeight: "120px", overflow: 'hidden' }}
+                                    />
+                                </div>
 
+                                <div className="position-absolute top-0" style={{ right: 12 }}>
+                                    <button onClick={() => onDeleteFileHandler(img.id)} className="btn p-0 btn-outline-danger border-0" style={{ width: 27 }}>
+                                        <i className="bi bi-x-circle" style={{ fontSize: 20 }}></i>
+                                    </button>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </>
+                ))}
+            </div >
+        </>
     );
+
+
 }
+
 export default ProductFileInputGroup;

@@ -4,6 +4,21 @@
         <name>WebShop</name>
     </assembly>
     <members>
+        <member name="P:WebShop.Data.Entities.BasketEntity.Quintity">
+            <summary>
+            Кількість товару
+            </summary>
+        </member>
+        <member name="P:WebShop.Data.Entities.BasketEntity.UserId">
+            <summary>
+            Користувач
+            </summary>
+        </member>
+        <member name="P:WebShop.Data.Entities.BasketEntity.ProductId">
+            <summary>
+            Продукт
+            </summary>
+        </member>
         <member name="T:WebShop.Migrations.AddtblCategories">
             <inheritdoc />
         </member>
@@ -62,6 +77,42 @@
             <inheritdoc />
         </member>
         <member name="M:WebShop.Migrations.AddtblProductsImages.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:WebShop.Migrations.AddtblBaskets">
+            <inheritdoc />
+        </member>
+        <member name="M:WebShop.Migrations.AddtblBaskets.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebShop.Migrations.AddtblBaskets.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebShop.Migrations.AddtblBaskets.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:WebShop.Migrations.user">
+            <inheritdoc />
+        </member>
+        <member name="M:WebShop.Migrations.user.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebShop.Migrations.user.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebShop.Migrations.user.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:WebShop.Migrations.user1">
+            <inheritdoc />
+        </member>
+        <member name="M:WebShop.Migrations.user1.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebShop.Migrations.user1.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebShop.Migrations.user1.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
         <member name="P:WebShop.Models.Auth.LoginViewModel.Email">

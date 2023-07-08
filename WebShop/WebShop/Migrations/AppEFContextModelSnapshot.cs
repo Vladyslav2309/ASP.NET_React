@@ -114,6 +114,24 @@ namespace WebShop.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("WebShop.Data.Entities.BasketEntity", b =>
+                {
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Quintity")
+                        .HasColumnType("integer");
+
+                    b.HasKey("UserId", "ProductId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("tblBaskets");
+                });
+
             modelBuilder.Entity("WebShop.Data.Entities.CategoryEntity", b =>
                 {
                     b.Property<int>("Id")
@@ -277,6 +295,59 @@ namespace WebShop.Migrations
                     b.ToTable("AspNetUserRoles", (string)null);
                 });
 
+            modelBuilder.Entity("WebShop.Data.Entities.OrderEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<decimal>("TotalPrice")
+                        .HasColumnType("numeric");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("WebShop.Data.Entities.OrderProductEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("integer");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("numeric");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("OrderProducts");
+                });
+
             modelBuilder.Entity("WebShop.Data.Entities.ProductEntity", b =>
                 {
                     b.Property<int>("Id")
@@ -381,6 +452,25 @@ namespace WebShop.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("WebShop.Data.Entities.BasketEntity", b =>
+                {
+                    b.HasOne("WebShop.Data.Entities.ProductEntity", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("WebShop.Data.Entities.Identity.UserEntity", "User")
+                        .WithMany("Baskets")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("WebShop.Data.Entities.CategoryEntity", b =>
                 {
                     b.HasOne("WebShop.Data.Entities.CategoryEntity", "Parent")
@@ -407,6 +497,36 @@ namespace WebShop.Migrations
                     b.Navigation("Role");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("WebShop.Data.Entities.OrderEntity", b =>
+                {
+                    b.HasOne("WebShop.Data.Entities.Identity.UserEntity", "User")
+                        .WithMany("Orders")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("WebShop.Data.Entities.OrderProductEntity", b =>
+                {
+                    b.HasOne("WebShop.Data.Entities.OrderEntity", "Order")
+                        .WithMany("OrderProducts")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("WebShop.Data.Entities.ProductEntity", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("WebShop.Data.Entities.ProductEntity", b =>
@@ -443,7 +563,16 @@ namespace WebShop.Migrations
 
             modelBuilder.Entity("WebShop.Data.Entities.Identity.UserEntity", b =>
                 {
+                    b.Navigation("Baskets");
+
+                    b.Navigation("Orders");
+
                     b.Navigation("UserRoles");
+                });
+
+            modelBuilder.Entity("WebShop.Data.Entities.OrderEntity", b =>
+                {
+                    b.Navigation("OrderProducts");
                 });
 
             modelBuilder.Entity("WebShop.Data.Entities.ProductEntity", b =>

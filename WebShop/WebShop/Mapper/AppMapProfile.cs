@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.Extensions.Configuration;
 using WebShop.Data.Entities;
 using WebShop.Models;
 
@@ -13,5 +14,9 @@ public class AppMapProfile : Profile
                 .ForMember(x => x.Image, opt => opt.Ignore());
 
         CreateMap<ProductImageEntity, ProductImageItemViewModel>();
+        CreateMap<ProductCreateViewModel, ProductEntity>();
+        CreateMap<ProductEntity, ProductViewModel>();
+        CreateMap<OrderEntity, OrderViewModel>();
+
     }
 }

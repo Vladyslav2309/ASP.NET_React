@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\xampp\\htdocs\\pv122_ASP.net\\WebShop\\WebShop\\WebShop.csproj": {}
+    "D:\\xampp\\htdocs\\pv122_ASP.net\\WebShop\\WebShop\\WebShop.csproj": {}
   },
   "projects": {
-    "C:\\xampp\\htdocs\\pv122_ASP.net\\WebShop\\WebShop\\WebShop.csproj": {
+    "D:\\xampp\\htdocs\\pv122_ASP.net\\WebShop\\WebShop\\WebShop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\xampp\\htdocs\\pv122_ASP.net\\WebShop\\WebShop\\WebShop.csproj",
+        "projectUniqueName": "D:\\xampp\\htdocs\\pv122_ASP.net\\WebShop\\WebShop\\WebShop.csproj",
         "projectName": "WebShop",
-        "projectPath": "C:\\xampp\\htdocs\\pv122_ASP.net\\WebShop\\WebShop\\WebShop.csproj",
+        "projectPath": "D:\\xampp\\htdocs\\pv122_ASP.net\\WebShop\\WebShop\\WebShop.csproj",
         "packagesPath": "C:\\Users\\Vlad\\.nuget\\packages\\",
-        "outputPath": "C:\\xampp\\htdocs\\pv122_ASP.net\\WebShop\\WebShop\\obj\\",
+        "outputPath": "D:\\xampp\\htdocs\\pv122_ASP.net\\WebShop\\WebShop\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Vlad\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -114,7 +115,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     }
